@@ -92,8 +92,6 @@
     <script>
         // Lagre plan til lokal lagring
         function savePlan() {
-            console.log("Lagrer plan...");
-
             let plan = {
                 mon: document.getElementById("mon").value,
                 tue: document.getElementById("tue").value,
@@ -104,9 +102,9 @@
                 sun: document.getElementById("sun").value
             };
 
-            // Lagre plan til localStorage
+            // Lagre planen i localStorage
             localStorage.setItem("ukeplan", JSON.stringify(plan));
-            console.log("Plan lagret!");
+            alert("Planen er lagret!");
         }
 
         // Last inn plan fra lokal lagring
@@ -127,7 +125,7 @@
         function clearPlan() {
             localStorage.removeItem("ukeplan");
             document.querySelectorAll("input").forEach(input => input.value = "");
-            console.log("Plan tømt!");
+            alert("Planen er tømt!");
         }
 
         // Kall funksjonene ved siden av knapper
