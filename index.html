@@ -85,12 +85,15 @@
                 <td><input type="text" id="sun"></td>
             </tr>
         </table>
-        <button onclick="savePlan()">Lagre Plan</button>
-        <button onclick="clearPlan()">Tøm Plan</button>
+        <button id="saveButton">Lagre Plan</button>
+        <button id="clearButton">Tøm Plan</button>
     </div>
 
     <script>
+        // Lagre plan til lokal lagring
         function savePlan() {
+            console.log("Lagrer plan...");
+
             let plan = {
                 mon: document.getElementById("mon").value,
                 tue: document.getElementById("tue").value,
@@ -100,9 +103,13 @@
                 sat: document.getElementById("sat").value,
                 sun: document.getElementById("sun").value
             };
+
+            // Lagre plan til localStorage
             localStorage.setItem("ukeplan", JSON.stringify(plan));
+            console.log("Plan lagret!");
         }
 
+        // Last inn plan fra lokal lagring
         function loadPlan() {
             let plan = JSON.parse(localStorage.getItem("ukeplan"));
             if (plan) {
@@ -116,11 +123,18 @@
             }
         }
 
+        // Tøm plan fra lokal lagring
         function clearPlan() {
             localStorage.removeItem("ukeplan");
             document.querySelectorAll("input").forEach(input => input.value = "");
+            console.log("Plan tømt!");
         }
 
+        // Kall funksjonene ved siden av knapper
+        document.getElementById("saveButton").addEventListener("click", savePlan);
+        document.getElementById("clearButton").addEventListener("click", clearPlan);
+
+        // Last inn plan når siden lastes
         loadPlan();
     </script>
 </body>
