@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukeplan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        input {
+            width: 90%;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Min Ukeplan</h1>
+        <table>
+            <tr>
+                <th>Dag</th>
+                <th>Aktivitet</th>
+            </tr>
+            <tr>
+                <td>Mandag</td>
+                <td><input type="text" id="mon"></td>
+            </tr>
+            <tr>
+                <td>Tirsdag</td>
+                <td><input type="text" id="tue"></td>
+            </tr>
+            <tr>
+                <td>Onsdag</td>
+                <td><input type="text" id="wed"></td>
+            </tr>
+            <tr>
+                <td>Torsdag</td>
+                <td><input type="text" id="thu"></td>
+            </tr>
+            <tr>
+                <td>Fredag</td>
+                <td><input type="text" id="fri"></td>
+            </tr>
+            <tr>
+                <td>Lørdag</td>
+                <td><input type="text" id="sat"></td>
+            </tr>
+            <tr>
+                <td>Søndag</td>
+                <td><input type="text" id="sun"></td>
+            </tr>
+        </table>
+        <button onclick="savePlan()">Lagre Plan</button>
+        <button onclick="clearPlan()">Tøm Plan</button>
+    </div>
+
+    <script>
+        function savePlan() {
+            let plan = {
+                mon: document.getElementById("mon").value,
+                tue: document.getElementById("tue").value,
+                wed: document.getElementById("wed").value,
+                thu: document.getElementById("thu").value,
+                fri: document.getElementById("fri").value,
+                sat: document.getElementById("sat").value,
+                sun: document.getElementById("sun").value
+            };
+            localStorage.setItem("ukeplan", JSON.stringify(plan));
+        }
+
+        function loadPlan() {
+            let plan = JSON.parse(localStorage.getItem("ukeplan"));
+            if (plan) {
+                document.getElementById("mon").value = plan.mon;
+                document.getElementById("tue").value = plan.tue;
+                document.getElementById("wed").value = plan.wed;
+                document.getElementById("thu").value = plan.thu;
+                document.getElementById("fri").value = plan.fri;
+                document.getElementById("sat").value = plan.sat;
+                document.getElementById("sun").value = plan.sun;
+            }
+        }
+
+        function clearPlan() {
+            localStorage.removeItem("ukeplan");
+            document.querySelectorAll("input").forEach(input => input.value = "");
+        }
+
+        loadPlan();
+    </script>
+</body>
+</html>
