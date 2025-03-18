@@ -11,7 +11,7 @@
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 20px auto;
             background: white;
             padding: 20px;
@@ -31,12 +31,22 @@
             background-color: #28a745;
             color: white;
         }
-        input {
-            width: 90%;
-            padding: 5px;
+        td input {
+            width: 100%;
+            padding: 10px;
+            height: 80px;
+            margin-top: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .section-header {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            padding: 5px 0;
         }
         button {
-            margin-top: 10px;
+            margin-top: 20px;
             padding: 10px;
             background: #28a745;
             color: white;
@@ -52,38 +62,58 @@
     <div class="container">
         <h1>Min Ukeplan</h1>
         <table>
-            <tr>
-                <th>Dag</th>
-                <th>Aktivitet</th>
-            </tr>
-            <tr>
-                <td>Mandag</td>
-                <td><input type="text" id="mon"></td>
-            </tr>
-            <tr>
-                <td>Tirsdag</td>
-                <td><input type="text" id="tue"></td>
-            </tr>
-            <tr>
-                <td>Onsdag</td>
-                <td><input type="text" id="wed"></td>
-            </tr>
-            <tr>
-                <td>Torsdag</td>
-                <td><input type="text" id="thu"></td>
-            </tr>
-            <tr>
-                <td>Fredag</td>
-                <td><input type="text" id="fri"></td>
-            </tr>
-            <tr>
-                <td>Lørdag</td>
-                <td><input type="text" id="sat"></td>
-            </tr>
-            <tr>
-                <td>Søndag</td>
-                <td><input type="text" id="sun"></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Dag</th>
+                    <th>Morgen</th>
+                    <th>Ettermiddag</th>
+                    <th>Kveld</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mandag</td>
+                    <td><input type="text" id="mon-morning"></td>
+                    <td><input type="text" id="mon-afternoon"></td>
+                    <td><input type="text" id="mon-evening"></td>
+                </tr>
+                <tr>
+                    <td>Tirsdag</td>
+                    <td><input type="text" id="tue-morning"></td>
+                    <td><input type="text" id="tue-afternoon"></td>
+                    <td><input type="text" id="tue-evening"></td>
+                </tr>
+                <tr>
+                    <td>Onsdag</td>
+                    <td><input type="text" id="wed-morning"></td>
+                    <td><input type="text" id="wed-afternoon"></td>
+                    <td><input type="text" id="wed-evening"></td>
+                </tr>
+                <tr>
+                    <td>Torsdag</td>
+                    <td><input type="text" id="thu-morning"></td>
+                    <td><input type="text" id="thu-afternoon"></td>
+                    <td><input type="text" id="thu-evening"></td>
+                </tr>
+                <tr>
+                    <td>Fredag</td>
+                    <td><input type="text" id="fri-morning"></td>
+                    <td><input type="text" id="fri-afternoon"></td>
+                    <td><input type="text" id="fri-evening"></td>
+                </tr>
+                <tr>
+                    <td>Lørdag</td>
+                    <td><input type="text" id="sat-morning"></td>
+                    <td><input type="text" id="sat-afternoon"></td>
+                    <td><input type="text" id="sat-evening"></td>
+                </tr>
+                <tr>
+                    <td>Søndag</td>
+                    <td><input type="text" id="sun-morning"></td>
+                    <td><input type="text" id="sun-afternoon"></td>
+                    <td><input type="text" id="sun-evening"></td>
+                </tr>
+            </tbody>
         </table>
         <button id="saveButton">Lagre Plan</button>
         <button id="clearButton">Tøm Plan</button>
@@ -93,16 +123,43 @@
         // Lagre plan til lokal lagring
         function savePlan() {
             let plan = {
-                mon: document.getElementById("mon").value,
-                tue: document.getElementById("tue").value,
-                wed: document.getElementById("wed").value,
-                thu: document.getElementById("thu").value,
-                fri: document.getElementById("fri").value,
-                sat: document.getElementById("sat").value,
-                sun: document.getElementById("sun").value
+                "mon": {
+                    morning: document.getElementById("mon-morning").value,
+                    afternoon: document.getElementById("mon-afternoon").value,
+                    evening: document.getElementById("mon-evening").value
+                },
+                "tue": {
+                    morning: document.getElementById("tue-morning").value,
+                    afternoon: document.getElementById("tue-afternoon").value,
+                    evening: document.getElementById("tue-evening").value
+                },
+                "wed": {
+                    morning: document.getElementById("wed-morning").value,
+                    afternoon: document.getElementById("wed-afternoon").value,
+                    evening: document.getElementById("wed-evening").value
+                },
+                "thu": {
+                    morning: document.getElementById("thu-morning").value,
+                    afternoon: document.getElementById("thu-afternoon").value,
+                    evening: document.getElementById("thu-evening").value
+                },
+                "fri": {
+                    morning: document.getElementById("fri-morning").value,
+                    afternoon: document.getElementById("fri-afternoon").value,
+                    evening: document.getElementById("fri-evening").value
+                },
+                "sat": {
+                    morning: document.getElementById("sat-morning").value,
+                    afternoon: document.getElementById("sat-afternoon").value,
+                    evening: document.getElementById("sat-evening").value
+                },
+                "sun": {
+                    morning: document.getElementById("sun-morning").value,
+                    afternoon: document.getElementById("sun-afternoon").value,
+                    evening: document.getElementById("sun-evening").value
+                }
             };
 
-            // Lagre planen i localStorage
             localStorage.setItem("ukeplan", JSON.stringify(plan));
             alert("Planen er lagret!");
         }
@@ -111,13 +168,33 @@
         function loadPlan() {
             let plan = JSON.parse(localStorage.getItem("ukeplan"));
             if (plan) {
-                document.getElementById("mon").value = plan.mon;
-                document.getElementById("tue").value = plan.tue;
-                document.getElementById("wed").value = plan.wed;
-                document.getElementById("thu").value = plan.thu;
-                document.getElementById("fri").value = plan.fri;
-                document.getElementById("sat").value = plan.sat;
-                document.getElementById("sun").value = plan.sun;
+                document.getElementById("mon-morning").value = plan.mon.morning;
+                document.getElementById("mon-afternoon").value = plan.mon.afternoon;
+                document.getElementById("mon-evening").value = plan.mon.evening;
+
+                document.getElementById("tue-morning").value = plan.tue.morning;
+                document.getElementById("tue-afternoon").value = plan.tue.afternoon;
+                document.getElementById("tue-evening").value = plan.tue.evening;
+
+                document.getElementById("wed-morning").value = plan.wed.morning;
+                document.getElementById("wed-afternoon").value = plan.wed.afternoon;
+                document.getElementById("wed-evening").value = plan.wed.evening;
+
+                document.getElementById("thu-morning").value = plan.thu.morning;
+                document.getElementById("thu-afternoon").value = plan.thu.afternoon;
+                document.getElementById("thu-evening").value = plan.thu.evening;
+
+                document.getElementById("fri-morning").value = plan.fri.morning;
+                document.getElementById("fri-afternoon").value = plan.fri.afternoon;
+                document.getElementById("fri-evening").value = plan.fri.evening;
+
+                document.getElementById("sat-morning").value = plan.sat.morning;
+                document.getElementById("sat-afternoon").value = plan.sat.afternoon;
+                document.getElementById("sat-evening").value = plan.sat.evening;
+
+                document.getElementById("sun-morning").value = plan.sun.morning;
+                document.getElementById("sun-afternoon").value = plan.sun.afternoon;
+                document.getElementById("sun-evening").value = plan.sun.evening;
             }
         }
 
