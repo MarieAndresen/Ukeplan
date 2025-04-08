@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Min ukedagsplan</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+h1 {
+color: blue;
+text-align: center;
+}
+.dag {
+border: 2px solid black;
+margin: 10px;
+padding: 10px;
+background-color: #f0f0f0;
+}
+.del {
+margin: 5px;
+padding: 5px;
+background-color: white;
+}
+</style>
+</head>
+<body>
+<h1>Min ukedagsplan</h1>
+
+<div class="dag">
+<h2>Mandag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+
+<div class="dag">
+<h2>Tirsdag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+
+<div class="dag">
+<h2>Onsdag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+
+<div class="dag">
+<h2>Torsdag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+
+<div class="dag">
+<h2>Fredag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+
+<div class="dag">
+<h2>Lørdag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+
+<div class="dag">
+<h2>Søndag</h2>
+<div class="del">
+<h3>Morgen</h3>
+<p>Her skriver jeg hva jeg gjør om morgenen</p>
+</div>
+<div class="del">
+<h3>Ettermiddag</h3>
+<p>Her skriver jeg hva jeg gjør om ettermiddagen</p>
+</div>
+<div class="del">
+<h3>Kveld</h3>
+<p>Her skriver jeg hva jeg gjør om kvelden</p>
+</div>
+</div>
+</body>
+</html>
 
