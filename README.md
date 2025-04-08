@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Min ukedagsplan</title>
-<style>
 body {
 font-family: 'Comic Sans MS', cursive, sans-serif;
 margin: 20px;
@@ -64,7 +62,6 @@ cursor: pointer;
 </div>
 </div>
 
-<!-- Tirsdag til søndag -->
 
 <script>
 // Lagrer data når noe endres
