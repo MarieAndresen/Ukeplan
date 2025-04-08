@@ -39,7 +39,7 @@ button {
     cursor: pointer;
 }
 </style>
-</head>
+
 <div class="dag" id="mandag">
 <h2>Mandag</h2>
 <div class="del">
