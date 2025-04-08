@@ -103,15 +103,7 @@ element.value = allData[id];
 }
 }
 
-// Nullstill alt
-function clearAll() {
-if (confirm("Er du sikker på at du vil slette alt?")) {
-localStorage.removeItem("ukedagsplan");
-document.querySelectorAll("textarea").forEach(box => box.value = "");
-document.querySelectorAll("input[type='checkbox']").forEach(box => box.checked = false);
-}
-}
-
+  
 // Last inn data når siden åpnes
 window.onload = loadData;
 </script>
