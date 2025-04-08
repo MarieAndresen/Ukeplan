@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 body {
@@ -47,15 +46,15 @@ cursor: pointer;
 <h2>Mandag</h2>
 <div class="del">
 <h3><input type="checkbox" class="checkbox" id="mandag-morgen-check"> Morgen </h3>
-<textarea id="mandag-morgen-text" placeholder="Hva skal du gjøre om morgenen?"></textarea>
+<textarea id="mandag-morgen-text" placeholder="Planer for morgenen"></textarea>
 </div>
 <div class="del">
 <h3><input type="checkbox" class="checkbox" id="mandag-ettermiddag-check"> Ettermiddag </h3>
-<textarea id="mandag-ettermiddag-text" placeholder="Hva skal du gjøre om ettermiddagen?"></textarea>
+<textarea id="mandag-ettermiddag-text" placeholder="Planer for ettermiddagen"></textarea>
 </div>
 <div class="del">
 <h3><input type="checkbox" class="checkbox" id="mandag-kveld-check"> Kveld </h3>
-<textarea id="mandag-kveld-text" placeholder="Hva skal du gjøre om kvelden?"></textarea>
+<textarea id="mandag-kveld-text" placeholder="Planer for kvelden"></textarea>
 </div>
 </div>
 
