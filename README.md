@@ -70,7 +70,7 @@ document.querySelectorAll("textarea, input[type='checkbox']").forEach(element =>
     element.addEventListener("input", saveData);
 });
 
-// Lagre i Local Storage
+// Local Storage
 function saveData() {
     const allData = {};
     document.querySelectorAll("textarea, input[type='checkbox']").forEach(element => {
@@ -84,7 +84,7 @@ function saveData() {
     localStorage.setItem("ukedagsplan", JSON.stringify(allData));
 }
 
-// Laster inn lagret data
+// Laster inn lagra data
 function loadData() {
     const savedData = localStorage.getItem("ukedagsplan");
     console.log("Loading data:", savedData);
