@@ -1,4 +1,3 @@
-<style>
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     margin: 20px;
@@ -38,7 +37,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-</style>
+
 
 <div class="dag" id="mandag">
 <h2>Mandag</h2>
