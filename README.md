@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Min ukedagsplan</title>
+
 <style>
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -46,7 +46,7 @@ button {
 </head>
 <body>
 <h1> Min ukedagsplan</h1>
-<button onclick="clearAll()">Nullstill alt</button>
+
 
 <div class="dag" id="mandag">
 <h2>Mandag</h2>
@@ -64,15 +64,15 @@ button {
 </div>
 </div>
 
-<!-- Tirsdag til søndag -->
+
 
 <script>
-// Lagrer data når noe endres
+// Lagre data når endring
 document.querySelectorAll("textarea, input[type='checkbox']").forEach(element => {
     element.addEventListener("input", saveData);
 });
 
-// Lagrer alt i Local Storage
+// Lagre i Local Storage
 function saveData() {
     const allData = {};
     document.querySelectorAll("textarea, input[type='checkbox']").forEach(element => {
