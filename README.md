@@ -1,47 +1,47 @@
-<html>
+<body>
 <head>
+<style>
 body {
-font-family: 'Comic Sans MS', cursive, sans-serif;
-margin: 20px;
-background-color: #f9f9f9;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
 }
 h1 {
-color: blue;
-text-align: center;
+    color: blue;
+    text-align: center;
 }
 .dag {
-border: 2px solid black;
-margin: 10px;
-padding: 10px;
-background-color: #e6f7ff;
-border-radius: 10px;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: #e6f7ff;
+    border-radius: 10px;
 }
 .del {
-margin: 5px;
-padding: 10px;
-background-color: white;
-border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
 }
 .checkbox {
-margin-right: 10px;
+    margin-right: 10px;
 }
 textarea {
-width: 100%;
-height: 60px;
-margin-top: 5px;
-font-family: 'Comic Sans MS', cursive, sans-serif;
+    width: 100%;
+    height: 60px;
+    margin-top: 5px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 button {
-background-color: #4CAF50;
-color: white;
-border: none;
-padding: 5px 10px;
-border-radius: 5px;
-cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 </style>
-<body>
-
+</head>
 <div class="dag" id="mandag">
 <h2>Mandag</h2>
 <div class="del">
