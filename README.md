@@ -82,12 +82,14 @@ allData[element.id] = element.checked;
 allData[element.id] = element.value;
 }
 });
+console.log("Saving data:", allData);
 localStorage.setItem("ukedagsplan", JSON.stringify(allData));
 }
 
 // Laster inn lagret data
 function loadData() {
 const savedData = localStorage.getItem("ukedagsplan");
+console.log("Loading data:", savedData);
 if (savedData) {
 const allData = JSON.parse(savedData);
 Object.keys(allData).forEach(id => {
@@ -98,15 +100,14 @@ element.checked = allData[id];
 } else {
 element.value = allData[id];
 }
+console.log("Loaded data for:", id, allData[id]);
 }
 });
 }
 }
 
-  
 // Last inn data når siden åpnes
 window.onload = loadData;
 </script>
 </body>
 </html>
-
