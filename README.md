@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 
@@ -45,7 +44,6 @@ button {
 </style>
 </head>
 <body>
-<h1> Min ukedagsplan</h1>
 
 
 <div class="dag" id="mandag">
