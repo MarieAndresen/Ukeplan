@@ -41,10 +41,7 @@ border-radius: 5px;
 cursor: pointer;
 }
 </style>
-</head>
 <body>
-<h1> Min ukedagsplan</h1>
-<button onclick="clearAll()">Nullstill alt</button>
 
 <div class="dag" id="mandag">
 <h2>Mandag</h2>
